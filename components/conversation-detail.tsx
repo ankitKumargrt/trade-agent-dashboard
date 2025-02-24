@@ -32,7 +32,7 @@ const playAudio = async (): Promise<void> => {
   try {
     if (!audio) {
       const client = new ElevenLabsClient({
-        apiKey: "LAyeFY9DQqToBQGiVLQd",
+        apiKey: process.env.NEXT_PUBLIC_VOICE_API_KEY,
       });
       const audioBlob: Blob =
         await client.conversationalAi.getConversationAudio(
@@ -60,7 +60,9 @@ const playAudio = async (): Promise<void> => {
   }
 
   const deleteConversation = async () => {
-    const client = new ElevenLabsClient({ apiKey: "LAyeFY9DQqToBQGiVLQd" });
+    const client = new ElevenLabsClient({
+      apiKey: process.env.NEXT_PUBLIC_VOICE_API_KEY
+    });
     await client.conversationalAi.deleteConversation(conversation.conversation_id)
     router.push("/")
   }
@@ -75,9 +77,9 @@ const playAudio = async (): Promise<void> => {
       </p>
 
       <div className="mb-6">
-        {/* <Button onClick={isPlaying ? pauseAudio : playAudio} className="mr-4">
+        <Button onClick={isPlaying ? pauseAudio : playAudio} className="mr-4">
           {isPlaying ? "Pause" : "Play"} Audio
-        </Button> */}
+        </Button>
         <Button variant="destructive" onClick={deleteConversation}>
           Delete Conversation
         </Button>

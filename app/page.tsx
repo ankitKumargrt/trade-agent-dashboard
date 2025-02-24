@@ -3,10 +3,10 @@ import { ConversationList } from "../components/conversation-list";
 
 export default async function Home() {
   const client = new ElevenLabsClient({
-    apiKey: process.env.ELEVENLABS_API_KEY,
+    apiKey: process.env.NEXT_PUBLIC_AGENT_API_KEY,
   });
   const conversations = await client.conversationalAi.getConversations({
-    agent_id: "LAyeFY9DQqToBQGiVLQd",
+    agent_id: process.env.NEXT_PUBLIC_VOICE_API_KEY,
   });
 
   return (

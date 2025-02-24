@@ -2,7 +2,9 @@ import { ElevenLabsClient } from "elevenlabs"
 import { ConversationDetail } from "../../../components/conversation-detail"
 
 export default async function ConversationPage({ params }: { params: { id: string } }) {
-  const client = new ElevenLabsClient({ apiKey: process.env.ELEVENLABS_API_KEY })
+  const client = new ElevenLabsClient({
+    apiKey: process.env.NEXT_PUBLIC_AGENT_API_KEY,
+  });
   const conversation = await client.conversationalAi.getConversation(params.id)
 
   return (
