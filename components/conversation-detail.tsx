@@ -76,14 +76,14 @@ const playAudio = async (): Promise<void> => {
         {conversation.metadata.call_duration_secs} seconds)
       </p>
 
-      <div className="mb-6">
+      {/* <div className="mb-6">
         <Button onClick={isPlaying ? pauseAudio : playAudio} className="mr-4">
           {isPlaying ? "Pause" : "Play"} Audio
         </Button>
         <Button variant="destructive" onClick={deleteConversation}>
           Delete Conversation
         </Button>
-      </div>
+      </div> */}
 
       <h3 className="text-xl font-semibold mb-2">Transcript</h3>
       <div className="space-y-4">
