@@ -60,7 +60,7 @@ const playAudio = async (): Promise<void> => {
   }
 
   const deleteConversation = async () => {
-    const client = new ElevenLabsClient({ apiKey: process.env.NEXT_PUBLIC_ELEVENLABS_API_KEY })
+    const client = new ElevenLabsClient({ apiKey: "LAyeFY9DQqToBQGiVLQd" });
     await client.conversationalAi.deleteConversation(conversation.conversation_id)
     router.push("/")
   }
